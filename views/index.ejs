@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zuriel</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  </head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Maestros</span> 
+    </nav>
+
+
+    <div class="container mt-5">
+      <div class="col-md-7">
+        <table class="table table-bordered table-striped text-center mt-4">
+          <thead id="titulo">
+            <tr>
+              <td>Id</td>
+              <td>Nombre</td>
+              <td>Detalles</td>
+              <td>Cambios</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% results.forEach((user)=>{%>
+                <tr>
+                  <td><%= user.id %></td>
+                  <td><%= user.nom %> </td>
+                  <td><%= user.det %> </td>
+                  <td>
+                    <div class="row">
+                      <a href="/edit/<%= user.id %>"class="btn  btn-warning">Editar</a>
+                      <a href="/delete/<%= user.id %>" class="btn btn-danger">Eliminar</a>
+                    </div>
+                  </td>
+                </tr>
+                <% }) %>
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="container">
+        <a href="/create" class="btn btn-info"> Añadir</a>
+      </div>
+  </body>
+</html>
